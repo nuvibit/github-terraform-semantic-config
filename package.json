@@ -10,7 +10,6 @@
     "@stefano-franco (https://github.com/stefano-franco)"
   ],
   "dependencies": {
-    "@google/semantic-release-replace-plugin": "1.0.2",
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/git": "^10.0.1"
   },
