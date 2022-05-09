@@ -1,0 +1,19 @@
+{
+  "name": "@nuvibit/github-terraform-semantic-config",
+  "version": "1.0.0",
+  "description": "semantic-release shareable config to publish terraform modules with Github Actions.",
+  "main": "index.js",
+  "scripts": {
+    "semantic-release": "semantic-release"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nuvibit/github-terraform-semantic-config.git"
+  },
+  "author": "stefano-franco",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nuvibit/github-terraform-semantic-config/issues"
+  },
+  "homepage": "https://github.com/nuvibit/github-terraform-semantic-config#readme"
+}
