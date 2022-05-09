@@ -1,6 +1,6 @@
-# @nuvibit/github-terraform-semantic-config
+# @nuvibit/github-terraform-semantic-release-config
 
-[**semantic-release**](https://github.com/semantic-release/semantic-release) shareable config to publish terraform modules with [Github Actions](https://github.com/nuvibit/github-terraform-workflows).
+[**semantic-release**](https://github.com/semantic-release/semantic-release) shareable config to create release of Terraform Modules with [Github Actions](https://github.com/nuvibit/github-terraform-workflows).
 
 ## Plugins
 
@@ -13,7 +13,7 @@ This shareable configuration use the following plugins:
 ## Install
 
 ```bash
-$ npm install --save-dev semantic-release @nuvibit/github-terraform-semantic-config
+$ npm install --save-dev semantic-release @nuvibit/github-terraform-semantic-release-config
 ```
 
 ## Usage
@@ -22,7 +22,7 @@ The shareable config can be configured in the [**semantic-release** configuratio
 
 ```json
 {
-  "extends": "@nuvibit/github-terraform-semantic-config"
+  "extends": "@nuvibit/github-terraform-semantic-release-config"
 }
 ```
 
