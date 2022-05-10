@@ -1,7 +1,7 @@
 {
   "name": "@nuvibit/github-terraform-semantic-release-config",
   "description": "semantic-release shareable config to create release of Terraform Modules.",
-  "version": "1.0.5",
+  "version": "1.0.8",
   "author": "@stefano-franco (https://github.com/stefano-franco)",
   "bugs": {
     "url": "https://github.com/nuvibit/github-terraform-semantic-release-config/issues"
@@ -20,8 +20,9 @@
   "engines": {
     "node": ">=10.18"
   },
+  "main": ".releaserc.json",
   "files": [
-    "plugins.json"
+    ".releaserc.json"
   ],
   "homepage": "https://github.com/nuvibit/github-terraform-semantic-release-config#readme",
   "keywords": [
@@ -34,7 +35,6 @@
     "version"
   ],
   "license": "MIT",
-  "main": "index.js",
   "peerDependencies": {
     "semantic-release": ">=16.0.0"
   },
@@ -59,8 +59,5 @@
     "rules": {
       "unicorn/string-content": "off"
     }
-  },
-  "release": {
-      "branches": ["main"]
   }
 }
