@@ -1,24 +1,57 @@
 module.exports = {
-  plugins: [
-    '@semantic-release/commit-analyzer',
-    {
-      preset: 'conventionalcommits',
-    },
-    '@semantic-release/release-notes-generator',
-    {
-      preset: 'conventionalcommits',
-    },
-    '@semantic-release/github',
-    '@semantic-release/changelog',
-    [
-      '@semantic-release/git',
-      {
-        assets: ['CHANGELOG.md'],
-        message: `chore(release): \${nextRelease.gitTag} [skip ci]\n\n\${nextRelease.notes}`,
-      },
-    ],
-  ],
-  tagFormat: '${version}',
+	plugins: [
+		'@semantic-release/commit-analyzer',
+		{
+			preset: 'conventionalcommits',
+			releaseRules: [
+				{
+					"type": "docs",
+					"release": "patch"
+				},
+				{
+					"type": "refactor",
+					"release": "patch"
+				},
+				{
+					"type": "test",
+					"release": "patch"
+				},
+				{
+					"type": "style",
+					"release": "patch"
+				}
+			],
+			parserOpts: {
+				"noteKeywords": [
+					"BREAKING CHANGE",
+					"BREAKING CHANGES",
+					"BREAKING"
+				]
+			}
+		},
+		'@semantic-release/release-notes-generator',
+		{
+			preset: 'conventionalcommits',
+			parserOpts: {
+				"noteKeywords": [
+					"BREAKING CHANGE",
+					"BREAKING CHANGES",
+					"BREAKING"
+				]
+			}
+		},
+		'@semantic-release/github',
+		'@semantic-release/changelog',
+		[
+			'@semantic-release/git',
+			{
+				"assets": [
+					"CHANGELOG.md"
+				]
+			}
+		],
+	],
+	tagFormat: '${version}',
 	maxSubjectLength: 72,
 	bodyLineLength: 100,
 	typesOrder: [
@@ -46,7 +79,7 @@ module.exports = {
 			emoji: '✨',
 			changelog: true,
 			release: 'minor',
-			aliases: {initial: {description: 'Initial commit', title: 'Initial', emoji: '🎉'}},
+			aliases: { initial: { description: 'Initial commit', title: 'Initial', emoji: '🎉' } },
 		},
 		fix: {
 			description: 'A bug fix',
@@ -55,14 +88,14 @@ module.exports = {
 			changelog: true,
 			release: 'patch',
 			aliases: {
-				dependencies: {description: 'Update dependency', title: 'Dependencies', emoji: '⬆️', scope: 'package'},
+				dependencies: { description: 'Update dependency', title: 'Dependencies', emoji: '⬆️', scope: 'package' },
 				peerDependencies: {
 					description: 'Update peer dependency',
 					title: 'Peer dependencies',
 					emoji: '⬆️',
 					scope: 'package',
 				},
-				metadata: {description: 'Update metadata (package.json)', title: 'Metadata', emoji: '📦', scope: 'package'},
+				metadata: { description: 'Update metadata (package.json)', title: 'Metadata', emoji: '📦', scope: 'package' },
 			},
 		},
 		docs: {
@@ -70,7 +103,7 @@ module.exports = {
 			title: 'Documentation',
 			emoji: '📚',
 			changelog: true,
-			release: {scope: 'readme', release: 'patch'},
+			release: { scope: 'readme', release: 'patch' },
 		},
 		style: {
 			description:
