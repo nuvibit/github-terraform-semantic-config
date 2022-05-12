@@ -1,7 +1,7 @@
 {
   "name": "@nuvibit/github-terraform-semantic-release-config",
   "description": "semantic-release shareable config to create release of Terraform Modules.",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "author": "@stefano-franco (https://github.com/stefano-franco)",
   "bugs": {
     "url": "https://github.com/nuvibit/github-terraform-semantic-release-config/issues"
@@ -60,6 +60,8 @@
       "unicorn/string-content": "off"
     }
   },
-  "branches": ["main", "master"],
-  "tagFormat": "${version}"
+  "release": {
+    "branches": ["main", "master"],
+    "tagFormat": "${version}"
+  }
 }
